@@ -15,7 +15,15 @@
     --mini-section: #19191a;
     --h1-font-size: 2rem;
     --h3-font-size: 1.2rem;
+    --reponsive-font-size: 1.5rem;
 }
+
+@media screen and (min-width:550){
+    :root{
+        --reponsive-font-size: 2rem;
+    }
+}
+
 @font-face {
     font-family: "Sans-pro-regular";
     src: url("SourceSansPro-Regular.ttf");
@@ -23,6 +31,10 @@
 @font-face {
     font-family: "Sans-pro-light";
     src: url("SourceSansPro-Light.ttf");
+}
+@font-face {
+    font-family: "Sans-pro-extra-light";
+    src: url("SourceSansPro-ExtraLight.ttf");
 }
 @font-face {
     font-family: "Sans-pro-bold";
@@ -78,10 +90,13 @@ a:hover{
     background: var(--buttons);
     padding: 10px 20px;
     border-radius: 5px;
-    font-family: "Sans-pro-light";
-    font-size: 1.2rem;
+
     cursor: pointer;
     transition: .2s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+.btn a{
+    font-family: "Sans-pro-extra-light";
+    font-size: 1.2rem;
 }
 
 .btn:hover{
@@ -96,7 +111,7 @@ a:hover{
 
 section{
     width: 100%;
-    padding: 5rem 0;
+    padding: 6rem 0;
     background: var(--mini-section);
 }
 
@@ -115,7 +130,7 @@ span{
 }
 
 .mobile-logo{
-    background: url("/img/favicon-standard-ipad.png");
+    background: url("/img/finished/favicon-standard-ipad.png");
     width: 55px;
     aspect-ratio: 1;
     background-repeat: no-repeat;
@@ -176,7 +191,7 @@ span{
     position: fixed;
     top:3.85rem;
     left: -55%;
-    width: 50%;
+    padding:1rem;
     aspect-ratio: 1;
     display: grid;
     place-items: center;
@@ -197,14 +212,16 @@ span{
 }
 
 .mobile-menu-wrapper ul li a{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-family: "Sans-pro-light";
 }
+
 
 #desktop{
     display: none;
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:800px) {
     #mobile{
         display: none;
     }
@@ -225,7 +242,7 @@ span{
         background: #202020;
     }
     .desktop-logo{
-        background: url("/img/favicon-standard-ipad.png");
+        background: url("/img/finished/favicon-standard-ipad.png");
         width: 3.5rem;
         aspect-ratio: 1;
         background-repeat: no-repeat;
@@ -264,7 +281,7 @@ span{
     align-items: center;
     text-align: center;  
     gap: 20px 0;
-    background: url("/img/4H1A4020.jpg");
+    background: url("/img/finished/4H1A4020.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -293,7 +310,7 @@ span{
 }
 
 .hero-video{
-    background: url("/img/Group_1.png");
+    background: url("/img/finished/Group_1.png");
     width: 85%;
     max-width: 1000px;
     background-size: cover;
@@ -319,10 +336,11 @@ span{
 .mini-1 p {
    font-size: 1.2rem;
    font-weight: 100;
+   font-family: "Sans-pro-extra-light";
 }
 @media screen and (min-width:800px) {
    .mini-1 p {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       font-weight: 100;
    }
 }
@@ -334,7 +352,7 @@ span{
 /* Start Our Services Section */
 .services{
     position: relative;
-    background: url("/img/DSC_9971.jpg");
+    background: url("/img/finished/DSC_9971.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
@@ -357,6 +375,7 @@ span{
 
 .service-card h2{
     font-size: 1.2rem;
+    
 }
 
 .services h1,
@@ -368,12 +387,14 @@ span{
     position: relative;
     z-index: 2 ;
 }
-
-#exclude{
+@media screen and (max-width:596px) {#exclude{
+    display: none;
+ }}
+@media screen and (min-width:874px) and (max-width:1154px) {#exclude{
    display: none;
-}
+}}
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:1154px)  {
     #exclude{
         display: block;
      }
@@ -384,6 +405,9 @@ span{
     width: 15rem;
     font-family: "Sans-pro-light";
     
+}
+.services h2{
+    font-family: "Sans-pro-regular";
 }
 
 .services h1:after{
@@ -442,6 +466,12 @@ span{
 
 }
 
+.service-card-content p{
+    font-family: "Sans-pro-light";
+    font-size: 1rem;
+    padding: 3px;
+}
+
 /* End Our Services Section */
 
 
@@ -484,8 +514,8 @@ span{
 }
 .about h1{
     text-align: center;
-    font-family: "Sans-pro-light";
-    font-weight: 500;
+    font-family: "Sans-pro-extra-light";
+    font-size: 1.5rem;
 }
 
 .about-card-holder{
@@ -568,12 +598,37 @@ span{
     background: var(--secondary-color);
 }
 
+
+@media screen and (max-width:899px){
+.feature-grid img{
+    width: 270px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+
+}
+.feature-grid a{
+    width: 270px;
+    aspect-ratio: 1.7;
+    overflow: hidden;
+}
+.feature-grid{
+    display: flex;
+    padding: 2rem .75rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+}
+
+@media screen and (min-width:900px){
 .container {
     padding: 10rem 2rem;
     width: 100%;
     transform: translate(5%);
-    
-  }
+}
+
   
   .flex {
     display: flex;
@@ -605,8 +660,8 @@ span{
   
   .feature-grid {
     width: 100%;
-    aspect-ratio: 3.5;
-    padding: 0 7%;
+    aspect-ratio: 3;
+    padding: 0 1rem;
     align-self: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
@@ -637,26 +692,166 @@ span{
   .feature-grid > :nth-child(3) {
     grid-row: span 3;
   }
+}
+
+
 /* Start Contact Us Section*/
 .contact{
    position: relative;
-   z-index: -2;
-   background: url("/img/Contact-Us.png");
+   background: url("/img/finished/20181208_dec2528.jpg");
    background-repeat: no-repeat;
    background-size: cover;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
-.contact:before{
-   content: '';
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: #000;
-   opacity: .75;
-   z-index: -1;
+.contact h1:after{
+    content: '';
+    width: 60%;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    height: 4px;
+    transform: translate(-50%);
+    background: var(--secondary-color);
+}
+
+.contact:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .75;
+    z-index: 1;
+}
+
+.contact h1,
+.contact h2,
+.contact h3,
+.contact h4,
+.contact h5,
+.contact video,
+.contact img,
+.contact h1,
+.contact a,
+.contact div,
+.contact p,
+.contact input,
+.contact textarea,
+.contact button{
+    position: relative;
+    z-index: 2 ;
+}
+
+.contact input,
+.contact textarea{
+    width: 100%;
+    height: 3rem;
+    border-radius: .75rem;
+    padding: .5rem;
+}
+.contact textarea{
+    height: 6rem;
+}
+.contact button{
+    background: transparent;
+    cursor: pointer;
+    width: 75px;
+    aspect-ratio: 1;
+    border: none;
+    transition: .3s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+.contact button:hover{
+    transform: rotate(90deg) scale(.9);
+    
+}
+
+.contact p{
+    font-family: "Sans-pro-extra-light";
+    font-size: 1.2rem;
+}
+.contact-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem 5rem;
+    padding:4rem 4rem;
+    flex-wrap: wrap-reverse;
+}
+
+.contact-card{
+    width: 45%;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem 1rem;
+}
+
+.contact-form{
+    width: 45%;
+    min-width: 250px;
+}
+.info-card{
+    position: relative;
+    padding: 15px 0;
+    display:flex;
+    align-items: center;
+    gap: 0 1rem;
+}
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem 0;
+    width: 100%;
+}
+
+.flex_inputs{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap:0 .5rem;
 }
 
 
 /* End Contact Us Section*/
+
+/* Start Footer Section */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding:  3rem 0;
+    background: var(--th-color);
+}
+footer img{
+    max-width: 150px;
+}
+
+footer p{
+    font-family: "Sans-pro-extra-light"; 
+}
+
+.social{
+    width: 100%;
+    padding: 1rem 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 .75rem;
+}
+
+.social img{
+    width: 1rem;
+    aspect-ratio: 1;
+}
+
+/*End Footer Section */

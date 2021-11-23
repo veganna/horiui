@@ -12,7 +12,6 @@ $(document).ready(function(){
         var currentPosition = $(this).scrollTop();
         var home = $("section#home").offset().top;
         var services = $("section#service").offset().top;
-        var about = $("section#about").offset().top;
         var contact = $("section#contact").offset().top;    
         var portifolio = $("section#portfolio").offset().top;    
         
@@ -25,23 +24,19 @@ $(document).ready(function(){
 
         if (currentPosition == home){
             $("a.home").addClass("active");
-            $("a.service, a.aboutus, a.contactus, a.portfolios").removeClass("active");
+            $("a.service, a.contactus, a.portfolios").removeClass("active");
         }
         if (currentPosition >= services-400){
             $("a.service").addClass("active");
-            $("a.home, a.aboutus, a.contactus,a.portfolios").removeClass("active");
+            $("a.home, a.contactus,a.portfolios").removeClass("active");
         }
         if (currentPosition >= portifolio-400){
             $("a.portfolios").addClass("active");
-            $("a.home, a.aboutus, a.contactus, a.service").removeClass("active");
-        }
-        if (currentPosition >= about-400){
-            $("a.aboutus").addClass("active");
-            $("a.home, a.service, a.contactus, a.portfolios").removeClass("active");  
+            $("a.home, a.contactus, a.service").removeClass("active");
         }
         if(currentPosition >= contact-400){
             $("a.contactus").addClass("active");
-            $("a.home, a.service, a.aboutus, a.portfolio").removeClass("active");
+            $("a.home, a.service, a.portfolios").removeClass("active");
         }
 
     });
@@ -65,7 +60,7 @@ $(document).ready(function(){
                 items:1
             },
             600:{
-                items:4
+                items:3
             },
             1000:{
                 items:5
